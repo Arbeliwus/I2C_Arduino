@@ -1,6 +1,6 @@
 #include "i2c.h"
 
-void i2cStart() {
+void I2CStart() {
   digitalWrite(SDA_PIN, HIGH);
   delayMicroseconds(5);
   digitalWrite(SCL_PIN, HIGH); 
@@ -11,7 +11,7 @@ void i2cStart() {
   delayMicroseconds(5);
 }
 
-void i2cStop() {
+void I2CStop() {
   digitalWrite(SDA_PIN, LOW);
   delayMicroseconds(5);  
   digitalWrite(SCL_PIN, HIGH); 
@@ -20,7 +20,7 @@ void i2cStop() {
   delayMicroseconds(5); 
 }
 
-void i2cWriteByte(uint8_t data) {
+void I2CWriteByte(uint8_t data) {
   for (uint8_t i = 0; i < 8; i++) {
     digitalWrite(SDA_PIN, (data & 0x80) ? HIGH : LOW);  
     delayMicroseconds(5);
@@ -40,7 +40,7 @@ void i2cWriteByte(uint8_t data) {
   delayMicroseconds(5);
 }
 
-void i2caddress(int address)
+void I2CAddress(int address)
 {
   for (int i = 0; i < 7; i++) {
     digitalWrite(SDA_PIN, (address & 0x80) ? HIGH : LOW); 
