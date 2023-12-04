@@ -7,9 +7,9 @@
 #define SCL_PIN A5  
 #define I2C_ADDRESS 3 
 
-void i2cStart();
-void i2cStop();
-void i2cWriteByte(uint8_t data);
-void i2caddress(int address);
+void I2CStart();
+void I2CStop();
+void I2CWriteByte(uint8_t data);
+void I2CAddress(int address);
 
 #endif
